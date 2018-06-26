@@ -17,6 +17,22 @@ export class User extends Model {
 
     lastName: string;
 
+    birthDay: Date;
+
+    subscriber: boolean;
+
+    subscriptionDate: Date;
+
+    subscriptionEndDate: Date;
+
+    subscriptionFromSite: boolean;
+
+    unSubscriptionDate: Date;
+
+    subscriptionDuration: number;
+
+    validator: boolean;
+
     administrator: boolean;
 
     betaTester: boolean;
@@ -115,9 +131,17 @@ export class User extends Model {
         form.plainPassword = this.plainPassword;
         form.firstName = this.firstName;
         form.lastName = this.lastName;
+        form.birthDay = this.birthDay;
+        form.subscriber = this.subscriber;
+        form.subscriptionDate = this.subscriptionDate;
+        form.subscriptionEndDate = this.subscriptionEndDate;
+        form.subscriptionFromSite = this.subscriptionFromSite;
+        form.unSubscriptionDate = this.unSubscriptionDate;
+        form.subscriptionDuration = this.subscriptionDuration;
         if (this.profilePhotoFile) {
             form.profilePhotoFile = this.profilePhotoFile.id;
         }
+        form.validator = this.validator;
         form.administrator = this.administrator;
         form.betaTester = this.betaTester;
         form.credits = this.credits;
